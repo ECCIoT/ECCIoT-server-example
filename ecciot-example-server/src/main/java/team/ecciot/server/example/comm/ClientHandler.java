@@ -142,6 +142,13 @@ public class ClientHandler extends SimpleChannelInboundHandler<String> implement
 	@Override
 	public void RTC_DeviceStateChanged(DeviceStateChangedArgs args) {
 		LOGGER.info("RTC连接设备状态发生改变。args:" + args);	
+		if(args.isState()){
+			/*新设备上线*/
+			
+		}else{
+			/*设备已下线*/
+			
+		}
 	}
 
 	@Override
