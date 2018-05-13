@@ -21,22 +21,22 @@ public class Group {
 		return groupId;
 	}
     
-	public ArrayList<DeviceModel> getDeviceChannelList() {
+	public ArrayList<DeviceModel> getDeviceModelList() {
 		synchronized (this) {
 			return deviceChannelList;
 		}
 	}
 	
-	public ArrayList<TerminalModel> getTerminalChannelList() {
+	public ArrayList<TerminalModel> getTerminalModelList() {
 		synchronized (this) {
 			return terminalChannelList;
 		}
 	}
 
 	public DeviceModel removeDeviceById(String itemId){
-		for(DeviceModel dm : getDeviceChannelList()){
+		for(DeviceModel dm : getDeviceModelList()){
 			if(dm.getItemID().equals(itemId)){
-				getDeviceChannelList().remove(dm);
+				getDeviceModelList().remove(dm);
 				return dm;
 			}
 		}
@@ -44,9 +44,28 @@ public class Group {
 	}
 	
 	public TerminalModel removeTerminalById(String token){
-		for(TerminalModel tm : getTerminalChannelList()){
+		for(TerminalModel tm : getTerminalModelList()){
 			if(tm.getToken().equals(token)){
-				getDeviceChannelList().remove(tm);
+				getDeviceModelList().remove(tm);
+				return tm;
+			}
+		}
+		return null;
+	}
+
+
+	public DeviceModel getDeviceById(String itemId){
+		for(DeviceModel dm : getDeviceModelList()){
+			if(dm.getItemID().equals(itemId)){
+				return dm;
+			}
+		}
+		return null;
+	}
+	
+	public TerminalModel getTerminalById(String token){
+		for(TerminalModel tm : getTerminalModelList()){
+			if(tm.getToken().equals(token)){
 				return tm;
 			}
 		}
