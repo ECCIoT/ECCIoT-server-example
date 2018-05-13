@@ -20,11 +20,11 @@
 		<property name="connection.driver_class">
 			com.mysql.jdbc.Driver
 		</property>
-		<mapping
-			resource="team/ecciot/server/example/db/Account.hbm.xml" />
 		<mapping resource="team/ecciot/server/example/db/Group.hbm.xml" />
 		<mapping
 			resource="team/ecciot/server/example/db/Device.hbm.xml" />
+		<mapping
+			resource="team/ecciot/server/example/db/Account.hbm.xml" />
 
 	</session-factory>
 

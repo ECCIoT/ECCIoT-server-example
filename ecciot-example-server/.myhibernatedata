@@ -1,5 +1,5 @@
 #MyEclipse Hibernate Properties
-#Fri May 11 19:40:26 CST 2018
+#Sat May 12 20:35:31 CST 2018
 genBasicCompId=true
 sessionFactoryName=team.ecciot.server.example.db.HibernateSessionFactory
 profile=
@@ -16,5 +16,5 @@ sessionFactoryId=
 basePersistenceClass=
 genAnnotations=false
 reSettingsFile=
-configFile=/ecciot-example-server/src/main/java/team/ecciot/server/example/db/hibernate.cfg.xml
+configFile=/ecciot-example-server/src/main/java/hibernate.cfg.xml
 createConfigFile=true
