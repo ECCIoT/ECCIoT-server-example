@@ -19,8 +19,11 @@ public class GroupManager {
 
     private GroupManager(){}
 
-    //API_KEY,ApplicationGroup
+    //groupId, group
     private HashMap<String,Group> hmGroup = new HashMap<String,Group>();
+    
+    //itemId, groupId
+    private HashMap<String,Group> hmdDevice4GroupId = new HashMap<String,Group>();
     
     private HashMap<String, Group> getHmGroup() {
 		return hmGroup;
@@ -28,26 +31,26 @@ public class GroupManager {
     
     /**
      * 通过apikey获取ApplicationGroup
-     * @param apikey
+     * @param groupId
      * @return
      */
-    public Group getGroupByI(String apikey){
+    public Group getGroupById(String groupId){
     	synchronized (hmGroup) {
-    		return getHmGroup().get(apikey);
+    		return getHmGroup().get(groupId);
 		}
     }
     
     /**
      * 添加一个ApplicationGroup
-     * @param apikey
+     * @param groupId
      * @param group
      * @return 若已存在相同apikey，则返回false
      */
-    public boolean addApplicationGroup(String apikey,Group group){
-    	if(getHmGroup().containsKey(apikey)){
+    public boolean addGroup(String groupId,Group group){
+    	if(getHmGroup().containsKey(groupId)){
     		return false;
     	}else{
-    		getHmGroup().put(apikey, group);
+    		getHmGroup().put(groupId, group);
     		return true;
     	}
     }

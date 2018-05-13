@@ -33,7 +33,23 @@ public class Group {
 		}
 	}
 
-//	public DeviceModel removeDeviceById(String itemId){
-//		
-//	}
+	public DeviceModel removeDeviceById(String itemId){
+		for(DeviceModel dm : getDeviceChannelList()){
+			if(dm.getItemID().equals(itemId)){
+				getDeviceChannelList().remove(dm);
+				return dm;
+			}
+		}
+		return null;
+	}
+	
+	public TerminalModel removeTerminalById(String token){
+		for(TerminalModel tm : getTerminalChannelList()){
+			if(tm.getToken().equals(token)){
+				getDeviceChannelList().remove(tm);
+				return tm;
+			}
+		}
+		return null;
+	}
 }
